@@ -1,18 +1,18 @@
-import "@babel/polyfill"; // Required at entry point of application
-import App from "./interface";
+import '@babel/polyfill'; // Required at entry point of application
+import App from './interface';
 
-async function test(int) {
+function test (int) {
 
   console.log('before promise');
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve/* , reject*/) => {
     setTimeout(() => {
       resolve(int * 2);
     }, 2000);
   });
 }
 
-async function main() {
+async function main () {
   const promise = test(22);
   console.log(promise);
 

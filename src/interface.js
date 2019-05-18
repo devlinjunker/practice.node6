@@ -1,11 +1,11 @@
 // @flow
-import readline from "readline";
+import readline from 'readline';
 
 export default class App {
   rl: any;
   running: any;
 
-  constructor() {
+  constructor () {
     this.rl = readline.createInterface({
       input: process.stdin,
       output: process.stdout
@@ -21,13 +21,13 @@ export default class App {
     return 0;
   }
 
-  async loop() {
+  async loop () {
     while (this.running) {
       const userInput = await this.getInput();
 
-      switch(userInput) {
-        default:
-          this.rl.write(`input recieved: ${userInput} \n`);
+      switch (userInput) {
+      default:
+        this.rl.write(`input recieved: ${userInput} \n`);
       }
 
       this.running = false;
@@ -36,13 +36,13 @@ export default class App {
     return;
   }
 
-  shutdown() {
+  shutdown () {
     this.rl.close();
   }
 
-  async getInput() {
-    return new Promise((resolve, reject) => {
-      this.rl.question("Waiting on response... ", (response) => {
+  getInput (): Promise<string> {
+    return new Promise((resolve/* , reject */) => {
+      this.rl.question('Waiting on response... ', (response) => {
         resolve(response);
       });
     });
