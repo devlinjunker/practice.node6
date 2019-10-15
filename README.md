@@ -13,7 +13,7 @@ Want an easy template for a node v6 script with some build features, like:
  - ESLint
 
 
-## Development Commands
+## Development
  `npm run watch` - watch files for changes and run lint (sson), flow and babel to compile to `/out` directory
 
 
@@ -29,7 +29,15 @@ Want an easy template for a node v6 script with some build features, like:
  `npm run app` - run the app/script that was compiled to `/out` directory
 
 
-## Process
+## Notes
+  Atom still displays lint errors in the editor if you have linter-eslint package,
+   installed so you will probably implicitly use the linting if this is your dev strategy.
+   If you are using an editor without linting tips, you may want to use the `simple-watch`
+   and `simple-build` commands so you bypass linting during the compile/build process.
+
+  - [ ] May want to set more eslint rules to just warnings? or create a production linter file that enforces style harsher?
+
+### Process
 
 1. Started with Node v6 `npm init`
 2. Added Babel v7
@@ -38,12 +46,3 @@ Want an easy template for a node v6 script with some build features, like:
 5. Added flow and ran `flow init` for .flowconfig + `flow` preset
 6. Added nodemon for running flow on file changes
 7. Added my eslintrc yaml file with a few removals to make quick js development easier
-
-
-## Notes
-  Atom still displays lint errors in the editor if you have linter-eslint package,
-   installed so you will probably implicitly use the linting if this is your dev strategy.
-   If you are using an editor without linting tips, you may want to use the `simple-watch`
-   and `simple-build` commands so you bypass linting during the compile/build process.
-
-  - [ ] May want to set more eslint rules to just warnings? or create a production linter file that enforces style harsher?
